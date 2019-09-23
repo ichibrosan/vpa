@@ -3,14 +3,15 @@
 #ifndef VPA_H
 #define VPA_H
 
+
 #define RMJ 19
 #define RMN 9
 #define RUP 15
 #define RPT 9
 
 #define VPA_DISC_PORT "5164"
-#define VPA_IP_NUMBER "192.168.2.2"
-#define VPA_BROADCAST "192.168.2.255"
+#define VPA_IP_NUMBER "10.0.1.1"
+#define VPA_BROADCAST "10.0.1.255"
 
 struct VPA_VERSION {
 	int rmj;
@@ -33,7 +34,7 @@ struct RESPONSE_PACKET {
 struct DISCOVERY_RESPONSE {
 	struct VPA_VERSION version;
 	int	sockfd;
-	struct sockaddr to_addr,
+	struct sockaddr to_addr;
 	socklen_t addr_len;
 	struct RESPONSE_PACKET packet;
 };
